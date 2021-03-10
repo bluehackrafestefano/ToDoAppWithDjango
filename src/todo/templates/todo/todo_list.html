@@ -3,10 +3,16 @@
 {% block content %}
 
 <div class="">
-    <h1>ToDo List</h1>
+    <h1>Todo List</h1>
     <ol>
     {% for todo in todos %}
-        <li>{{ todo }}</li>
+        <a href="{% url  'update' todo.id %}">
+        {% if todo.completed %}
+            <li><del>{{ todo }}</del></li>
+        {% else %}
+            <li>{{ todo }}</li>
+        {% endif %}
+        </a>
     {% endfor %}
     </ol>    
 </div>
