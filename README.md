@@ -1,4 +1,5 @@
-# Django Project for IT Students
+# Django Project Name:
+Blog Project
 
 ### Nice to have VSCode Extentions:
 - Djaneiro - Django Snippets
@@ -46,9 +47,22 @@ cd .\src\
 ```py
 python manage.py startapp firstapp
 ```
-- To put environment variables, need to install a package:
+- To use python decouple in this project, first install it:
 ```py
-pip install python-decouple  # This is for blog project
+pip install python-decouple
+```
+- For more information: https://pypi.org/project/python-decouple/
+- Import the config object on settings.py file:
+```py
+from decouple import config
+```
+- Create .env file. We will collect our variables in this file.
+```py
+SECRET_KEY = o5o9...
+```
+- Retrieve the configuration parameters in settings.py:
+```py
+SECRET_KEY = config('SECRET_KEY')
 ```
 - Go to views.py in firstapp directory
 - Create first view by adding:
