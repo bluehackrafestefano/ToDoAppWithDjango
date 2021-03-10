@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="">
+    <h1>ToDo List</h1>
+    <ol>
+    {% for todo in todos %}
+        <li>{{ todo }}</li>
+    {% endfor %}
+    </ol>    
+</div>
+
+{% endblock content %}
+    
